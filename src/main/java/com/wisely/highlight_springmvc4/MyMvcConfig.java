@@ -59,6 +59,10 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		registry.addInterceptor(demoInterceptor());
 	}
 
+    /**
+     * 大量的转发可以统一处理 代码更加简洁 管理更加集中
+     * @param registry
+     */
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/index").setViewName("/index");

@@ -15,7 +15,8 @@ public class HelloController {
 
 	@RequestMapping("/index2")//2
 	public @ResponseBody String hello2(){
-
+        StringBuilder sb = null;
+        sb.append("1");
 		return "index";
 	}
 }
