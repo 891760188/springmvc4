@@ -72,11 +72,19 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		registry.addViewController("/async").setViewName("/async");
 	}
 
+    /**
+     * 在springmvc中，请求路径的.后面的后缀将会被忽略，此处配置不忽略
+     * @param configurer
+     */
 	 @Override
 	 public void configurePathMatch(PathMatchConfigurer configurer) {
 	 configurer.setUseSuffixPatternMatch(false);
 	 }
 
+    /**
+     * 文件上传的配置
+     * @return
+     */
 	@Bean
 	public MultipartResolver multipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();

@@ -12,12 +12,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class UploadController {
-	
+
+	/**
+	 * 文件上传的例子
+	 * @param file
+	 * @return
+     */
 	@RequestMapping(value = "/upload",method = RequestMethod.POST)
 	public @ResponseBody String upload(MultipartFile file) {//1
 		
 			try {
-				FileUtils.writeByteArrayToFile(new File("e:/upload/"+file.getOriginalFilename()),
+				FileUtils.writeByteArrayToFile(new File("d:/upload/"+file.getOriginalFilename()),
 						file.getBytes()); //2
 				return "ok";
 			} catch (IOException e) {
